@@ -1,9 +1,13 @@
-import MovieBox from "../components/MovieBox/MovieBox";
-import WatchedBox from "../components/WatchedBox/WatchedBox";
 import NavBar from "../components/NavBar/Navbar";
 import "./App.css";
 import { useState } from "react";
-import { BoxMain } from "../components/MovieBox/MovieBox.styled";
+import Search from "../components/Search/Search";
+import Results from "../components/NumResults/NumResults";
+import Main from "../components/Main/Main";
+import WatchedMoviesList from "../components/WatchedMovieList/WatchedMovieList";
+import Box from "../components/Box/Box";
+import MovieList from "../components/MovieList/MovieList";
+import WatchedSummary from "../components/WatchedSummary/WatchedSummary";
 
 const tempMovieData = [
   {
@@ -54,26 +58,22 @@ const tempWatchedData = [
 export default function App() {
   const [movies, setMovies] = useState(tempMovieData);
   const [watched, setWatched] = useState(tempWatchedData);
-  const [isOpen1, setIsOpen1] = useState(true);
-  const [isOpen2, setIsOpen2] = useState(true);
   return (
     <>
-      <NavBar movies={movies} />
-      <BoxMain>
-        {" "}
-        <MovieBox
-          movies={movies}
-          setMovies={setMovies}
-          isOpen={isOpen1}
-          setIsOpen={setIsOpen1}
-        />
-        <WatchedBox
-          watched={watched}
-          setWatched={setWatched}
-          isOpen={isOpen2}
-          setIsOpen={setIsOpen2}
-        />
-      </BoxMain>{" "}
+      <NavBar>
+        <Search />
+        <Results movies={movies} />
+      </NavBar>
+
+      <Main>
+        <Box>
+          <MovieList movies={movies} setMovies={setMovies} />
+        </Box>
+        <Box>
+          <WatchedSummary watched={watched} setWatched={setWatched} />
+          <WatchedMoviesList watched={watched} setWatched={setWatched} />
+        </Box>
+      </Main>
     </>
   );
 }

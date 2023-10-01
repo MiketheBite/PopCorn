@@ -1,5 +1,6 @@
 import styled from "styled-components";
-export const Box = styled.div`
+
+export const BoxContainer = styled.div`
   width: 42rem;
   max-width: 42rem;
   background-color: var(--color-background-500);
@@ -7,6 +8,7 @@ export const Box = styled.div`
   overflow: scroll;
   position: relative;
 `;
+
 export const ButtonToggle = styled.button`
   position: absolute;
   top: 0.8rem;

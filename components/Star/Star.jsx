@@ -14,6 +14,8 @@ export default function Star({
       onClick={onRate}
       onMouseEnter={onHoverIn}
       onMouseLeave={onHoverOut}
+      width={size}
+      height={size}
     >
       {full ? (
         <svg

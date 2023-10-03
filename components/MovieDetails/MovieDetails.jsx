@@ -65,6 +65,19 @@ export default function MovieDetails({
     },
     [selectedId]
   );
+
+  useEffect(
+    function () {
+      if (!title) return;
+      document.title = `Movie | ${title}`;
+      //Cleaning up!
+      return function () {
+        document.title = "PopCorn";
+      };
+    },
+    [title]
+  );
+
   return (
     <Details>
       {isLoading ? (

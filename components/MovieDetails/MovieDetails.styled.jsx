@@ -73,3 +73,19 @@ export const Rating = styled.div`
   flex-direction: column;
   gap: 2.4rem;
 `;
+
+export const AddButton = styled.button`
+  background-color: var(--color-primary);
+  color: var(--color-text);
+  border: none;
+  border-radius: 10rem;
+  font-size: 1.4rem;
+  padding: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s;
+
+  &:hover {
+    background-color: var(--color-primary-light);
+  }
+`;

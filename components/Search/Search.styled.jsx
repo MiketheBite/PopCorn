@@ -10,7 +10,6 @@ export const SearchInput = styled.input`
   transition: all 0.3s;
   color: var(--color-text);
 
-  /* background-color: var(--color-background-900); */
   background-color: var(--color-primary-light);
   &::placeholder {
     color: var(--color-text-dark);
@@ -19,5 +18,9 @@ export const SearchInput = styled.input`
     outline: none;
     box-shadow: 0 2.4rem 2.4rem rgba(0, 0, 0, 0.1);
     transform: translateY(-2px);
+  }
+
+  @media (max-width: 768px) {
+    width: 90%;
   }
 `;

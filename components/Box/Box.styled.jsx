@@ -1,12 +1,16 @@
 import styled from "styled-components";
 
 export const BoxContainer = styled.div`
-  width: 42rem;
-  max-width: 42rem;
+  width: 45rem;
+  max-width: 100%;
   background-color: var(--color-background-500);
   border-radius: 0.9rem;
-  overflow: scroll;
+  overflow-x: hidden;
+  overflow-y: auto;
   position: relative;
+  @media (max-width: 768px) {
+    width: 100%;
+  }
 `;
 
 export const ButtonToggle = styled.button`
